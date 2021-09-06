@@ -2,37 +2,61 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+::root {
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.visuallyhidden {
+  position: relative;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  word-wrap: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.toggle-switch-container {
+  content: '';
+  display: inline-block;
+  width: 100px;
+  height: 50px;
+  background-color: red;
+  position: relative;
+  border-radius: 10%;
+}
+
+.toggle-switch {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  z-index: 1;
+  transition: left 0.5s;
+}
+
+.toggle-checkbox--checked ~ .toggle-switch-container {
+  background-color: green;
+}
+
+.toggle-checkbox--checked ~ .toggle-switch-container > .toggle-switch {
+  left: 50px;
+}
+.toggle-checkbox ~ .toggle-switch-container .toggle-text {
+  position: absolute;
+  left: 60px;
+  top: 15px;
   color: white;
+  font-weight: bold;
 }
 
-.App-link {
-  color: #61dafb;
+.toggle-checkbox--checked ~ .toggle-switch-container .toggle-text {
+  left: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.label-text {
+  vertical-align: 20px;
 }
