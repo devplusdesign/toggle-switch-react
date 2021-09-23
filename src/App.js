@@ -4,9 +4,9 @@ import ToggleSwitch from './ToggleSwitch';
 function App() {
   return (
     <div className="App">
-      <ToggleSwitch>
-        Send Notifications
-      </ToggleSwitch>
+      <ToggleSwitch 
+        text="Get Notifications" 
+        details="This will enable you to see the latest updates easily."/>
     </div>
   );
 }
